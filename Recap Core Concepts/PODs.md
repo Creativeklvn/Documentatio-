@@ -1,0 +1,54 @@
+## CHECK NUMBERS OF POD
+
+```bash
+kubectl get pod
+```
+
+## Create a new pod using the nginx image
+
+```bash
+kubectl run nginx --image=nginx
+```
+
+you will see an similar to this
+
+```Output
+pod/nginx created
+```
+
+## Check which image is specified for a pods
+
+```bash
+kubectl describe pod 
+```
+
+## What is the state of the container agentx in the pod webapp?
+
+ kubectl describe pod webapp 
+ (look at the state of the agentx container.)
+
+## Why do you think the container agentx in pod webapp is in error?
+Inspect the events of the pod to determine the reason for the container's failure to start.
+
+kubectl describe pod webapp
+(look under the events section.)
+
+## READY column in the output of the kubectl get pods command indicate
+Ready container in the pod / Total containers in the pod
+
+## Delete a running pod
+kubectl delete pod webapp
+
+## To create a manifest file :-
+kubectl run redis --image=redis123 --dry-run=client -o yaml > redis-definition.yaml
+
+After that, using kubectl create -f command to create a resource from the manifest file :-
+kubectl create -f redis-definition.yaml 
+
+Verify the work by running kubectl get command :-
+kubectl get pods
+
+## A pod is the smallest object you can create in kubernetes
+A single pod can have multiple container except they usually not same container of the same kind.
+
+## Docker containers
