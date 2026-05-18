@@ -52,3 +52,4 @@ kubectl get pods
 A single pod can have multiple container except they usually not same container of the same kind.
 
 ## Docker containers
+we are one
